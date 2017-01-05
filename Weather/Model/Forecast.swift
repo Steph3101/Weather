@@ -6,21 +6,22 @@
 //  Copyright © 2017 Stéhane Azzopardi AE. All rights reserved.
 //
 
-import UIKit
+import ObjectMapper
 
-class Forecast: NSObject {
+class Forecast {
 
-    var city: String?
-    var shortDescription: String?
-    var temperature: Float?
+    var date: Date?
     var minTemperature: Float?
     var maxTemperature: Float?
-    var date: Date?
-    var sunrise: Date?
-    var sunset: Date?
-    var clouds: Int?
-    var rain: Int?
-    var humidity: Int?
-    var pression: Int?
+ 
+    required init?(map: Map) {
+        
+    }
     
+    func mapping(map: Map) {
+        
+        date            <- (map["dt"], DateTransform())
+        minTemperature  <- map["temp.min"]
+        maxTemperature  <- map["temp.max"]
+    }
 }

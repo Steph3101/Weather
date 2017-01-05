@@ -76,6 +76,7 @@
 				F40876331E1D62FC003BF9A9 /* Forecast.swift */,
 			);
 			name = Model;
+			path = Model;
 			sourceTree = "<group>";
 		};
 		F40876311E1D5F49003BF9A9 /* ViewModel */ = {
@@ -84,6 +85,7 @@
 				F4F2D4601E1E3F77008BE1D1 /* WeatherViewModel.swift */,
 			);
 			name = ViewModel;
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 		F40876321E1D5F4F003BF9A9 /* Controller */ = {
@@ -92,6 +94,7 @@
 				F4F2D45E1E1E3EED008BE1D1 /* WeatherViewController.swift */,
 			);
 			name = Controller;
+			path = Controller;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -183,6 +186,7 @@
 				F40876211E1D508B003BF9A9 /* Base */,
 			);
 			name = Main.storyboard;
+			path = .;
 			sourceTree = "<group>";
 		};
 		F40876251E1D508B003BF9A9 /* LaunchScreen.storyboard */ = {
@@ -191,6 +195,7 @@
 				F40876261E1D508B003BF9A9 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			path = .;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */

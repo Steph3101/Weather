@@ -14,6 +14,7 @@
 		F40876341E1D62FC003BF9A9 /* Forecast.swift in Sources */ = {isa = PBXBuildFile; fileRef = F40876331E1D62FC003BF9A9 /* Forecast.swift */; };
 		F4F2D45F1E1E3EED008BE1D1 /* WeatherViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4F2D45E1E1E3EED008BE1D1 /* WeatherViewController.swift */; };
 		F4F2D4611E1E3F77008BE1D1 /* WeatherViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4F2D4601E1E3F77008BE1D1 /* WeatherViewModel.swift */; };
+		F4F2D4641E1E8708008BE1D1 /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4F2D4631E1E8708008BE1D1 /* APIManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		F40876331E1D62FC003BF9A9 /* Forecast.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Forecast.swift; sourceTree = "<group>"; };
 		F4F2D45E1E1E3EED008BE1D1 /* WeatherViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeatherViewController.swift; sourceTree = "<group>"; };
 		F4F2D4601E1E3F77008BE1D1 /* WeatherViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeatherViewModel.swift; sourceTree = "<group>"; };
+		F4F2D4631E1E8708008BE1D1 /* APIManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = APIManager.swift; path = APIManager/APIManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,6 +63,7 @@
 				F408761C1E1D508B003BF9A9 /* AppDelegate.swift */,
 				F40876201E1D508B003BF9A9 /* Main.storyboard */,
 				F40876251E1D508B003BF9A9 /* LaunchScreen.storyboard */,
+				F4F2D4621E1E86EE008BE1D1 /* Manager */,
 				F408762F1E1D5F05003BF9A9 /* Model */,
 				F40876311E1D5F49003BF9A9 /* ViewModel */,
 				F40876321E1D5F4F003BF9A9 /* Controller */,
@@ -75,7 +78,6 @@
 			children = (
 				F40876331E1D62FC003BF9A9 /* Forecast.swift */,
 			);
-			name = Model;
 			path = Model;
 			sourceTree = "<group>";
 		};
@@ -84,7 +86,6 @@
 			children = (
 				F4F2D4601E1E3F77008BE1D1 /* WeatherViewModel.swift */,
 			);
-			name = ViewModel;
 			path = ViewModel;
 			sourceTree = "<group>";
 		};
@@ -93,8 +94,15 @@
 			children = (
 				F4F2D45E1E1E3EED008BE1D1 /* WeatherViewController.swift */,
 			);
-			name = Controller;
 			path = Controller;
+			sourceTree = "<group>";
+		};
+		F4F2D4621E1E86EE008BE1D1 /* Manager */ = {
+			isa = PBXGroup;
+			children = (
+				F4F2D4631E1E8708008BE1D1 /* APIManager.swift */,
+			);
+			name = Manager;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -172,6 +180,7 @@
 			files = (
 				F40876341E1D62FC003BF9A9 /* Forecast.swift in Sources */,
 				F4F2D4611E1E3F77008BE1D1 /* WeatherViewModel.swift in Sources */,
+				F4F2D4641E1E8708008BE1D1 /* APIManager.swift in Sources */,
 				F4F2D45F1E1E3EED008BE1D1 /* WeatherViewController.swift in Sources */,
 				F408761D1E1D508B003BF9A9 /* AppDelegate.swift in Sources */,
 			);

@@ -11,5 +11,16 @@ import UIKit
 class Forecast: NSObject {
 
     var city: String?
-    var day: String?
+    var shortDescription: String?
+    var temperature: Float?
+    var minTemperature: Float?
+    var maxTemperature: Float?
+    var date: Date?
+    var sunrise: Date?
+    var sunset: Date?
+    var clouds: Int?
+    var rain: Int?
+    var humidity: Int?
+    var pression: Int?
+    
 }

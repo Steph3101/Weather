@@ -28,7 +28,6 @@ class WeatherViewModel: NSObject {
         return dateFormatter?.string(from: date)
     }
     
-    
     // MARK: Texts
     var cityDisplayText: String {
         guard let city = weather?.city else {
@@ -48,7 +47,7 @@ class WeatherViewModel: NSObject {
         guard let temperature = weather?.temperature else {
             return placeHolderText
         }
-        return ("\(temperature) °")
+        return ("\(Int(temperature)) °")
     }
     
     var sunriseTimeDisplayText: String {

@@ -21,10 +21,12 @@ class WeatherViewController: UIViewController {
     @IBOutlet weak var humidityLabel: UILabel!
     @IBOutlet weak var pressureLabel: UILabel!
     
-    var weatherViewModel: WeatherViewModel?
+    var weatherViewModel: WeatherViewModel? = WeatherViewModel()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        configureView()
         
         APIManager.sharedInstance.getCurrentWeather(success: { (weather) in
             

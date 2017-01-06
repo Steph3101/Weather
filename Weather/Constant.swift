@@ -23,5 +23,6 @@ struct APIParameter {
     
     static let appId    = "APPID"
     static let id       = "id"
+    static let units    = "units"
     static let count    = "count"
 }

@@ -14,8 +14,9 @@ class APIManager: NSObject {
     
     static let sharedInstance: APIManager = APIManager()
     
-    var parameters: Parameters? = [APIParameter.appId : apiKey,
-                                   APIParameter.id : cityId]
+    var parameters: Parameters? = [APIParameter.appId: apiKey,
+                                   APIParameter.id: cityId,
+                                   APIParameter.units: "metric"]
     
     func getCurrentWeather(success:@escaping (Weather) -> Void,
                            failure:@escaping (Error) -> Void) {

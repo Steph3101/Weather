@@ -48,6 +48,17 @@ class WeatherViewController: UIViewController {
         humidityLabel.text      = weatherViewModel.humidityDiplayText
         pressureLabel.text      = weatherViewModel.pressureDiplayText
     }
+    
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        
+        // Center tableview content
+        let headerHeight = (forecastsTableView.frame.size.height-forecastsTableView.contentSize.height)/2
+        
+        if headerHeight > 0 {
+            forecastsTableView.contentInset = UIEdgeInsets(top: headerHeight, left: 0, bottom: -headerHeight, right: 0)
+        }
+    }
 }
 
 extension WeatherViewController: WeatherViewModelDelegate {

@@ -8,17 +8,17 @@
 
 import ObjectMapper
 
-class Forecast {
+struct Forecast: Mappable {
 
     var date: Date?
     var minTemperature: Float?
     var maxTemperature: Float?
  
-    required init?(map: Map) {
+    init?(map: Map) {
         
     }
     
-    func mapping(map: Map) {
+    mutating func mapping(map: Map) {
         
         date            <- (map["dt"], DateTransform())
         minTemperature  <- map["temp.min"]

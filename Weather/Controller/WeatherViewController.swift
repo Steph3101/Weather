@@ -19,13 +19,34 @@ class WeatherViewController: UIViewController {
     @IBOutlet weak var cloudsLabel: UILabel!
     @IBOutlet weak var rainLabel: UILabel!
     @IBOutlet weak var humidityLabel: UILabel!
-    @IBOutlet weak var pressionLabel: UILabel!
+    @IBOutlet weak var pressureLabel: UILabel!
+    
+    var weatherViewModel: WeatherViewModel?
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        APIManager.sharedInstance.getCurrentWeather(success: { (weather) in
+            
+            self.weatherViewModel = WeatherViewModel(weather: weather)
+            self.configureView()
+            
+        }) { (error) in
+            
+            print(error)
+        }
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
+    
+    func configureView() {
+        
+        cityLabel.text          = weatherViewModel?.cityDisplayText
+        descriptionLabel.text   = weatherViewModel?.descriptionDisplayText
+        temperatureLabel.text   = weatherViewModel?.temperatureDisplayText
+        sunriseLabel.text       = weatherViewModel?.sunriseTimeDisplayText
+        sunsetLabel.text        = weatherViewModel?.sunsetTimeDisplayText
+        cloudsLabel.text        = weatherViewModel?.cloudsDiplayText
+        rainLabel.text          = weatherViewModel?.rainDiplayText
+        humidityLabel.text      = weatherViewModel?.humidityDiplayText
+        pressureLabel.text      = weatherViewModel?.pressureDiplayText
     }
 }

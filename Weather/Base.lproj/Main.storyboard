@@ -233,10 +233,10 @@
                             <mask key="constraints">
                                 <exclude reference="MFB-6J-gEe"/>
                                 <exclude reference="TGv-Ze-8Jd"/>
-                                <exclude reference="Qnj-yW-iab"/>
-                                <exclude reference="ced-t9-xPR"/>
                                 <exclude reference="H2g-JG-VSB"/>
                                 <exclude reference="ifz-d0-cIq"/>
+                                <exclude reference="Qnj-yW-iab"/>
+                                <exclude reference="ced-t9-xPR"/>
                                 <exclude reference="Bg8-vh-jC4"/>
                                 <exclude reference="fHF-B6-NXO"/>
                             </mask>
@@ -247,15 +247,15 @@
                                 <include reference="MFB-6J-gEe"/>
                                 <include reference="TGv-Ze-8Jd"/>
                                 <exclude reference="rns-PT-ROa"/>
+                                <include reference="H2g-JG-VSB"/>
+                                <include reference="ifz-d0-cIq"/>
+                                <exclude reference="uhB-sK-DcS"/>
+                                <exclude reference="xfD-lm-7in"/>
                                 <exclude reference="8Hk-m3-SSE"/>
                                 <exclude reference="JAk-pL-zhD"/>
                                 <include reference="Qnj-yW-iab"/>
                                 <exclude reference="bJt-Hk-FLY"/>
                                 <include reference="ced-t9-xPR"/>
-                                <include reference="H2g-JG-VSB"/>
-                                <include reference="ifz-d0-cIq"/>
-                                <exclude reference="uhB-sK-DcS"/>
-                                <exclude reference="xfD-lm-7in"/>
                                 <exclude reference="Bg8-vh-jC4"/>
                                 <include reference="fHF-B6-NXO"/>
                             </mask>
@@ -267,7 +267,7 @@
                         <outlet property="descriptionLabel" destination="LRP-pp-AXd" id="HNX-DU-EOy"/>
                         <outlet property="forecastsTableView" destination="tMk-fh-kUI" id="0W9-5z-nUc"/>
                         <outlet property="humidityLabel" destination="DD2-DU-znb" id="l6K-5G-XMS"/>
-                        <outlet property="pressionLabel" destination="drB-lD-vPV" id="zEL-lK-U8t"/>
+                        <outlet property="pressureLabel" destination="drB-lD-vPV" id="9sT-jG-vdF"/>
                         <outlet property="rainLabel" destination="Tps-GC-tUe" id="mmF-Pb-PhZ"/>
                         <outlet property="sunriseLabel" destination="SUH-Gh-V5S" id="Hvq-tz-wdy"/>
                         <outlet property="sunsetLabel" destination="8QV-2O-bHx" id="112-Nn-axE"/>

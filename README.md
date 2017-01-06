@@ -1,6 +1,10 @@
 # Weather
 A simple weather application developed for training purpose
 
+## Architecture
+### MVVM
+Project is base on MVVM architecture
+
 ## Libraries
 ### Network
 Alamofire for network requests

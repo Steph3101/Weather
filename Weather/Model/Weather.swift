@@ -21,9 +21,7 @@ struct Weather: Mappable {
     var humidity: Int?
     var pressure: Int?
     
-    init?(map: Map) {
-        
-    }
+    init?(map: Map) {}
     
     mutating func mapping(map: Map) {
         

@@ -14,14 +14,25 @@ struct Forecast: Mappable {
     var minTemperature: Float?
     var maxTemperature: Float?
  
-    init?(map: Map) {
-        
-    }
+    init?(map: Map) {}
     
     mutating func mapping(map: Map) {
         
         date            <- (map["dt"], DateTransform())
         minTemperature  <- map["temp.min"]
         maxTemperature  <- map["temp.max"]
+    }
+}
+
+struct ForecastsReponse: Mappable {
+    
+    var forecasts: [Forecast]?
+    
+    init?(map: Map) {
+    }
+    
+    mutating func mapping(map: Map) {
+        
+        forecasts <- map["list"]
     }
 }

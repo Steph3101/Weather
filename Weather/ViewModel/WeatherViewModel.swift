@@ -8,20 +8,59 @@
 
 import UIKit
 
+protocol WeatherViewModelDelegate {
+    
+    func modelDidLoadWeather()
+    func modelDidLoadForecast()
+}
+
 class WeatherViewModel: NSObject {
 
     let placeHolderText: String = "-"
     var weather: Weather?
+    var forecastsViewModels: [ForecastCellViewModel]?
     var dateFormatter: DateFormatter?
+    var delegate: WeatherViewModelDelegate? = nil
     
-    convenience init(weather: Weather) {
+    override init() {
         
-        self.init()
-        self.weather = weather
+        super.init()
+        loadWeather()
+        loadForecasts()
+        
         dateFormatter = DateFormatter()
         dateFormatter?.dateFormat = "h:mm a"
     }
     
+    func loadWeather() {
+        
+        APIManager.sharedInstance.getCurrentWeather(success: { (weather) in
+            
+            self.weather = weather
+            self.delegate?.modelDidLoadWeather()
+        }) { (error) in
+            
+            print(error)
+        }
+    }
+    
+    func loadForecasts() {
+        
+        APIManager.sharedInstance.getForecasts(success: { (forecasts) in
+            
+            self.forecastsViewModels = [ForecastCellViewModel]()
+            
+            for forecast in forecasts {
+                
+                self.forecastsViewModels?.append(ForecastCellViewModel(withForecast: forecast))
+            }
+            
+            self.delegate?.modelDidLoadForecast()
+        }, failure: { (error) in
+            
+            print(error)
+        })
+    }
     
     // MARK: Tools
     func time(fromDate date: Date) -> String? {
@@ -92,5 +131,23 @@ class WeatherViewModel: NSObject {
             return placeHolderText
         }
         return ("\(pressure) hPa")
+    }
+    
+    // MARK: TableView viewModel
+    var numberOfSection: Int {
+        return 1
+    }
+    
+    var numberOfRows: Int {
+        return forecastsViewModels?.count ?? 0
+    }
+    
+    func forecastCellViewModel(forRowAtIndex indexPath: IndexPath) -> ForecastCellViewModel {
+    
+        guard let models = forecastsViewModels else {
+            return ForecastCellViewModel()
+        }
+        
+        return models[indexPath.row]
     }
 }

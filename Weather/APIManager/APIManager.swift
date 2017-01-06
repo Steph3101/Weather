@@ -35,4 +35,27 @@ class APIManager: NSObject {
                 }
         }
     }
+    
+    func getForecasts(success:@escaping ([Forecast]) -> Void,
+                      failure:@escaping (Error) -> Void) {
+        
+        var params = parameters
+        
+        params?[APIParameter.count] = 7
+        
+        Alamofire.SessionManager.default.request(APIPath.daily,
+                                                 method: HTTPMethod.get,
+                                                 parameters: params)
+            
+            .responseObject { (response: DataResponse<ForecastsReponse>) in
+                
+                guard let forecasts = response.result.value?.forecasts else {
+
+                    failure(NSError(domain: "Request Error", code: 0, userInfo: nil))
+                    return
+                }
+                
+                success(forecasts)
+        }
+    }
 }
